@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    <style>
+        thead tr th {
+            padding: 10px 30px;
+            border-bottom: 1px solid black;
+            text-align: center;
+        }
+        
+        tbody tr td {
+            padding: 10px;
+            text-align: center;
+        }
+        
+        table {
+            border: 2px solid black;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="color: red;">LIBRARY MANAGEMENT SYSTEM</h1>
+    <a href="/add">Add Book</a>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Book Name</th>
+                <th>Author</th>
+                <th>Available</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% list.map(e => { %>
+                <tr>
+                    <td>
+                        <%= e._id %>
+                    </td>
+                    <td>
+                        <%= e.book_name %>
+                    </td>
+                    <td>
+                        <%= e.author %>
+                    </td>
+                    <td>
+                        <%= e.available %>
+                    </td>
+                    <td>
+                        <a href="/<%= e._id %>">Delete</a>
+                        <a href="/edit/<%= e._id %>">Update</a>
+                    </td>
+                </tr>
+                <% }); %>
+        </tbody>
+    </table>
+
+
+</body>
+
+</html>
