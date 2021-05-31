@@ -13,9 +13,11 @@ router.get('/', home.home);
 router.get('/:id', home.delete);
 
 
+
 const add_book = require('../controllers/add_book');
 
-router.get('/add', add_book.display)
+router.get('/add/new', add_book.display);
+
 
 router.post('/add', add_book.send);
 

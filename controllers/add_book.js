@@ -3,6 +3,7 @@ const BookList = mongoose.model('Books');
 
 module.exports.display = (req, res) => {
     return res.render('add_book');
+
 }
 
 module.exports.send = (req, res) => {
